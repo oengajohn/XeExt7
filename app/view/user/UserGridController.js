@@ -1,34 +1,41 @@
-Ext.define('XeExt7.view.user.UserGridController',{
+Ext.define('XeExt7.view.user.UserGridController', {
     extend: 'Ext.app.ViewController',
-    alias:'controller.usergridcontroller',
-    mixins:[
+    alias: 'controller.usergridcontroller',
+    mixins: [
         'XeExt7.view.commons.GridMixin'
     ],
 
-    onAddNew:function(){
+    onAddNew: function() {
         Ext.create({
-            xtype:'userform'
+            xtype: 'columnlayout'
         });
+        // this.showForm(null);
     },
-    onRemoveSelected:function(){
-        var me=this;
-        var grid= me.getView();
-        var record= me.getSelectedRecord(grid);
-        if(record){
+    onRemoveSelected: function() {
+        var me = this;
+        var grid = me.getView();
+        var record = me.getSelectedRecord(grid);
+        if (record) {
             console.log(record.get('id'));
         }
-        
+
     },
-    onViewDetails:function(){
-        var me=this;
-        var grid= me.getView();
-        var record= me.getSelectedRecord(grid);
-        if(record){
-          var window=  Ext.create({
-                xtype:'userform'
-            });
+    onViewDetails: function() {
+        var me = this;
+        var grid = me.getView();
+        var record = me.getSelectedRecord(grid);
+        if (record) {
+            me.showForm(record);
+        }
+    },
+    showForm: function(record) {
+        var window = Ext.create({
+            xtype: 'userform'
+        });
+        if (record) {
             window.lookupReference('form').getForm().loadRecord(record);
         }
-   }
+    }
+
 
 })

@@ -24,6 +24,9 @@ Ext.define('XeExt7.Application', {
                 }
             }
         );
+    },
+    launch:function() {
+        Ext.tip.QuickTipManager.init();
     }
 },function(){
     baseUrl= 'https://jsonplaceholder.typicode.com/';

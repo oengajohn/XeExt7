@@ -10,7 +10,7 @@ Ext.define('TutorialApp.view.users.UserFormController', {
             form = me.getView().lookupReference('form').getForm();
         var id = form.findField('id').getValue();
         var method = 'POST';
-        var url = baseUrl+'users';
+        var url = baseUrl + 'users';
         if (id) {
             method = 'PUT';
             url = url + '/' + id
@@ -21,7 +21,7 @@ Ext.define('TutorialApp.view.users.UserFormController', {
                 waitMsg: 'Please wait...',
                 method: method,
                 success: function(form, action) {
-                   console.log(action.result);
+                    console.log(action.result);
                 },
                 failure: function(form, action) {
                     console.log(action.result);
