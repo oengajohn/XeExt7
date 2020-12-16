@@ -1,9 +1,9 @@
-Ext.define('XeExt7.view.commons.GridMixin', {   
-    getSelectedRecords:function(grid){
-        var selectionModel= grid.getSelectionModel();
-        if(selectionModel.hasSelection()){
-           return selectionModel.getSelection();          
-        }else{
+Ext.define('XeExt7.view.commons.GridMixin', {
+    getSelectedRecords: function(grid) {
+        var selectionModel = grid.getSelectionModel();
+        if (selectionModel.hasSelection()) {
+            return selectionModel.getSelection();
+        } else {
             Ext.Msg.show({
                 title: 'No Selection',
                 msg: 'Make one Selection and try again!',
@@ -12,11 +12,11 @@ Ext.define('XeExt7.view.commons.GridMixin', {
             });
         }
     },
-    getSelectedRecord:function(grid){
-        var selectionModel= grid.getSelectionModel();
-        if(selectionModel.hasSelection()){
-           return selectionModel.getSelection()[0];          
-        }else{
+    getSelectedRecord: function(grid) {
+        var selectionModel = grid.getSelectionModel();
+        if (selectionModel.hasSelection()) {
+            return selectionModel.getSelection()[0];
+        } else {
             Ext.Msg.show({
                 title: 'No Selection',
                 msg: 'Make one Selection and try again!',
@@ -24,5 +24,8 @@ Ext.define('XeExt7.view.commons.GridMixin', {
                 icon: Ext.Msg.ERROR
             });
         }
+    },
+    loadStore: function() {
+        this.getView().getStore().load();
     }
 });

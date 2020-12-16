@@ -84,15 +84,15 @@ Ext.define('XeExt7.view.main.Main', {
     }, {
         title: 'Users',
         iconCls: 'fa-user',
-       items: [{
-           xtype:'usergrid'
-       }]
+        items: [{
+            xtype: 'usergrid'
+        }]
     }, {
-        title: 'Groups',
+        title: 'Posts',
         iconCls: 'fa-users',
-        bind: {
-            html: '{loremIpsum}'
-        }
+        items: [{
+            xtype: 'postgrid'
+        }]
     }, {
         title: 'Settings',
         iconCls: 'fa-cog',

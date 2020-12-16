@@ -6,10 +6,10 @@ Ext.define('XeExt7.view.user.UserGridController', {
     ],
 
     onAddNew: function() {
-        Ext.create({
-            xtype: 'columnlayout'
-        });
-        // this.showForm(null);
+        // Ext.create({
+        //     xtype: 'columnlayout'
+        // });
+        this.showForm(null);
     },
     onRemoveSelected: function() {
         var me = this;

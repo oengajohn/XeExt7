@@ -16,18 +16,18 @@ Ext.define('XeExt7.Application', {
         }
     },
 
-    onAppUpdate: function () {
+    onAppUpdate: function() {
         Ext.Msg.confirm('Application Update', 'This application has an update, reload?',
-            function (choice) {
+            function(choice) {
                 if (choice === 'yes') {
                     window.location.reload();
                 }
             }
         );
     },
-    launch:function() {
+    launch: function() {
         Ext.tip.QuickTipManager.init();
     }
-},function(){
-    baseUrl= 'https://jsonplaceholder.typicode.com/';
+}, function() {
+    baseUrl = 'http://localhost:8080/Jotech/api/';
 });
